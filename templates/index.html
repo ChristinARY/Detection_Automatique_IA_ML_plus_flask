@@ -1,0 +1,84 @@
+{% extends "base.html" %} {% block index %}
+<div>
+  <div class="tab-content">
+    <div
+      class="tab-pane active"
+      id="mois"
+      role="tabpanel"
+      aria-labelledby="home-tab"
+    >
+      <!------Test----->
+    </div>
+    <div
+      class="tab-pane"
+      id="semaine"
+      role="tabpanel"
+      aria-labelledby="profile-tab"
+    >
+      <!---->
+    </div>
+  </div>
+
+  <!---->
+</div>
+
+<div class="card text-center">
+  <div></div>
+
+  <div class="card text-center">
+    <div class="card-header">
+      <h3>VISUALISATION</h3>
+    </div>
+    <form action="{{url_for('predict_image')}}" method="post">
+      <div class="card-body">
+        <h5 class="card-title"></h5>
+        <div class="d-grid gap-2 col-6 mx-auto">
+          <!------>
+
+          <div>
+            <label for="formFileLg" class="form-label" name="img"
+              >Veuillez Selectionnée l'image à prédire</label
+            >
+            <input
+              class="form-control form-control-lg"
+              id="formFileLg"
+              type="file"
+              name="img"
+            />
+            <div>
+              <p>
+                <input
+                  class="btn btn-outline-success btn-lg"
+                  style="margin: 10px; padding-left: 30px; padding-right: 30px"
+                  type="submit"
+                  name="pred"
+                />
+              </p>
+            </div>
+          </div>
+
+          <!---->
+        </div>
+      </div>
+    </form>
+    <div class="card text-center">
+      <div class="card-header">
+        <h3>RESULTAT DE LA PRÉDICTION</h3>
+        <h1>{{ prediction }}</h1>
+      </div>
+
+      <div class="card-body">
+        <h5 class="card-title"></h5>
+        <div class="d-grid gap-2 col-6 mx-auto">
+          <!--<a class="btn btn-outline-warning" type="button" href="#"
+            >APPERCUE DES DONNEE SCRAPER
+          </a>-->
+          <p class="card-text"></p>
+        </div>
+      </div>
+      <div class="card-footer text-muted"></div>
+    </div>
+
+    {% endblock %}
+  </div>
+</div>
